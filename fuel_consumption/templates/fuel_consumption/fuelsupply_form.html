@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% bootstrap_messages %}
+
+{% block content %}
+{{ form.media }}
+  <div class="row">
+    <div class="col-12">
+      <h3 class="usericon">Abastecimento do carro</h3>
+      <div class="row mb-5">
+        <div class="col-lg-2 col-md-8 col-sm-10">
+          <form action="{% url 'fuel_consumption:fuel' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+              {% bootstrap_field field placeholder=False %}
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Abastecer!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

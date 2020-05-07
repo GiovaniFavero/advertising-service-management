@@ -1,0 +1,1 @@
+web: gunicorn advertising_service_management.wsgi

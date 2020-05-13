@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-  {# <h3>Bem vindo ao sistema para gerenciamento de propagandas</h3> #}
 
+{% if user.is_authenticated %}
+  {# <h3>Bem vindo ao sistema para gerenciamento de propagandas</h3> #}
+  {% for vehicle in vehicle_list  %}
   <!-- Earnings (Monthly) Card Example -->
   <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-primary shadow h-100 py-2">
@@ -9,7 +11,8 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Última média de consumo</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">{{average_consumption|floatformat:2}} km/L</div>
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{vehicle.vehicle}}</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{vehicle.average_consumption|floatformat:2}} km/L</div>
           </div>
           <div class="col-auto">
             <i class="fas fa-gas-pump fa-2x text-gray-300"></i>
@@ -18,5 +21,6 @@
       </div>
     </div>
   </div>
-
+{% endfor %}
+{% endif %}
 {% endblock %}

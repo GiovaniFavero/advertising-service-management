@@ -11,6 +11,7 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
+            <th>Veículo</th>
             <th>Data</th>
             <th>Preço do combustível</th>
             <th>Valor abastecido</th>
@@ -20,6 +21,7 @@
         <tbody>
           {% for fuel in object_list %}
             <tr>
+              <th>{{ fuel.vehicle.model }}</th>
               <td>{{ fuel.date|date:'d/m/Y H:i'  }}</td>
               <td>R$ {{ fuel.price }}</td>
               <td>R$ {{ fuel.amount }}</td>

@@ -22,5 +22,6 @@ app_name = 'main'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view(), name='index'),
-    path('fuelConsumption/', include('fuel_consumption.urls', namespace='fuel_consumption'))
+    path('fuelConsumption/', include('fuel_consumption.urls', namespace='fuel_consumption')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
 ]

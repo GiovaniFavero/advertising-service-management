@@ -17,7 +17,7 @@ class FuelSupply(models.Model):
     price = models.FloatField(null=False)
     amount = models.FloatField(null=False)
     mileage = models.IntegerField(null=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def get_absolute_url(self):
         return reverse('index')

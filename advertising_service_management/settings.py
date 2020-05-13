@@ -136,7 +136,7 @@ DATE_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 LOGIN_URL = '/accounts/login'
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
 STATIC_URL = '/static/'

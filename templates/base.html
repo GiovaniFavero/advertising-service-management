@@ -53,16 +53,18 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="{% url 'fuel_consumption:fuel' %}" >
             <i class="fas fa-fw fa-gas-pump"></i>
-            <span>Abastecimento</span>
+            <span>Abastecer</span>
           </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{% url 'fuel_consumption:fuel' %}">Abastecer</a>
-              <a class="collapse-item" href="{% url 'fuel_consumption:fuel_list' %}">Histórico</a>
-            </div>
-          </div>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'fuel_consumption:fuel_list' %}">
+            <i class="fas far fa-history"></i>
+            <span>Histórico de abastecimento</span>
+          </a>
         </li>
 
         <!-- Divider -->
